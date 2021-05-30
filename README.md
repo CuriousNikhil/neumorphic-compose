@@ -11,7 +11,7 @@ This library is an experimentation with [Neumorphism UI](https://uxdesign.cc/neu
 
 ### 1. Add the dependency
 
-And your app level `build.gradle`
+And your app level `build.gradle`. (Make sure you have compose dependencies as well)
 
 ```kotlin
   implementation("me.nikhilchaudhari:composeNeumorphism:1.0.0-alpha")
