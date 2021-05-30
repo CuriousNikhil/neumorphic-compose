@@ -1,8 +1,8 @@
 # Neumorphism UI with Jetpack Compose
-
-[![](https://jitpack.io/v/CuriousNikhil/neumorphic-compose.svg)](https://jitpack.io/#CuriousNikhil/neumorphic-compose)
-
 This library is an experimentation with [Neumorphism UI](https://uxdesign.cc/neumorphism-in-user-interfaces-b47cef3bf3a6) (New + Skeuomorphism) on Android with Jetpack Compose.  
+
+[![](https://img.shields.io/badge/mavencentral-1.0.0--alpha-brightgreen)]()
+
 <p align="center">
 <img src="https://github.com/CuriousNikhil/neumorphic-compose/blob/main/static/complete_screen.png?raw=true" height=400>
 </p>
@@ -10,19 +10,11 @@ This library is an experimentation with [Neumorphism UI](https://uxdesign.cc/neu
 ## How to use?
 
 ### 1. Add the dependency
-Add it in your root `build.gradle` at the end of repositories:
-
-```kotlin
-repositories {
-  ...
-  maven { url 'https://jitpack.io' }
-}
-```
 
 And your app level `build.gradle`
 
 ```kotlin
-  implementation("com.github.CuriousNikhil:neumorphic-compose:1.0.0-alpha")
+  implementation("me.nikhilchaudhari:composeNeumorphism:1.0.0-alpha")
 ```
 
 ### 2. Use
