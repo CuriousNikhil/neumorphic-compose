@@ -4,7 +4,7 @@
 
 This library is an experimentation with [Neumorphism UI](https://uxdesign.cc/neumorphism-in-user-interfaces-b47cef3bf3a6) (New + Skeuomorphism) on Android with Jetpack Compose.  
 <p align="center">
-<img src="https://github.com/CuriousNikhil/neumorphic-compose/blob/main/library/static/complete_screen.png?raw=true" height=400>
+<img src="https://github.com/CuriousNikhil/neumorphic-compose/blob/main/static/complete_screen.png?raw=true" height=400>
 </p>
 
 ## How to use?
