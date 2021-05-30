@@ -1,5 +1,5 @@
 # Neumorphism UI with Jetpack Compose
-This library is an experimentation with [Neumorphism UI](https://uxdesign.cc/neumorphism-in-user-interfaces-b47cef3bf3a6) (New + Skeuomorphism) on Android with Jetpack Compose.  
+This library is an experimentation with [Neumorphism UI](https://uxdesign.cc/neumorphism-in-user-interfaces-b47cef3bf3a6) (New + Skeuomorphism) on Android with **Jetpack Compose**.  
 
 [![](https://img.shields.io/badge/mavencentral-1.0.0--alpha-brightgreen)]()
 
