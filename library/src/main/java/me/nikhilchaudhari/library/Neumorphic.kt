@@ -4,11 +4,13 @@ import android.content.Context
 import android.os.Build
 import android.util.DisplayMetrics
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.composed
 import androidx.compose.ui.draw.DrawModifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.drawscope.ContentDrawScope
 import androidx.compose.ui.platform.InspectorInfo
 import androidx.compose.ui.platform.InspectorValueInfo
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.debugInspectorInfo
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
@@ -26,34 +28,36 @@ data class NeuInsets(
 )
 
 fun Modifier.neumorphic(
-    context: Context,
     neuInsets: NeuInsets = NeuInsets(),
     neuShape: NeuShape = Punched.Rounded(),
     lightShadowColor: Color = Color.White,
     darkShadowColor: Color = Color.LightGray,
     strokeWidth: Dp = 6.dp,
     elevation: Dp = 6.dp
-) = this.then(
-    NeumorphicModifier(
-        context,
-        neuInsets,
-        neuShape,
-        lightShadowColor,
-        darkShadowColor,
-        strokeWidth,
-        elevation,
-        inspectorInfo = debugInspectorInfo {
-            name = "neumorphic"
-            properties["context"] = context
-            properties["neuInsets"] = neuInsets
-            properties["neuShape"] = neuShape
-            properties["elevation"] = elevation
-            properties["strokeWidth"] = strokeWidth
-            properties["lightShadowColor"] = lightShadowColor
-            properties["darkShadowColor"] = darkShadowColor
-        }
+) = composed {
+    val context = LocalContext.current
+    this.then(
+        NeumorphicModifier(
+            context,
+            neuInsets,
+            neuShape,
+            lightShadowColor,
+            darkShadowColor,
+            strokeWidth,
+            elevation,
+            inspectorInfo = debugInspectorInfo {
+                name = "neumorphic"
+                properties["context"] = context
+                properties["neuInsets"] = neuInsets
+                properties["neuShape"] = neuShape
+                properties["elevation"] = elevation
+                properties["strokeWidth"] = strokeWidth
+                properties["lightShadowColor"] = lightShadowColor
+                properties["darkShadowColor"] = darkShadowColor
+            }
+        )
     )
-)
+}
 
 internal class NeumorphicModifier(
     context: Context,
