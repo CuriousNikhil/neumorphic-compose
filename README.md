@@ -124,7 +124,8 @@ You can use this right now if you want to play with shiny Neumorphism UI. The li
 ## Contribution Guide
 Please contribute! I'm just getting my hands dirty with Jetpack-Compose.  
 There is heavy chance that the code may/may not be correct/holding best practices. I request you to contribute/ raise issues/ send PRs so I can learn too.
-You can use the Github **Discussion** to discuss and ask questions. Or you can reach out to me on Twitter [@CuriousNikhil](https://twitter.com/curiousnikhil)
+You can use the Github **Discussion** to discuss and ask questions. Or you can reach out to me on Twitter [@CuriousNikhil](https://twitter.com/curiousnikhil). 
+ - Current release branch - `release/1.0.0-alpha02`
 
 ## License
 Licensed under Apache License, Version 2.0 [here](https://github.com/CuriousNikhil/neumorphic-compose/blob/main/LICENSE)
