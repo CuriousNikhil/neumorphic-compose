@@ -1,6 +1,6 @@
 package me.nikhilchaudhari.neumorphiccompose
 
-import android.content.Context
+
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -17,7 +17,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
@@ -64,7 +63,6 @@ fun Greeting(name: String) {
 
 @Composable
 fun SimpleDesignCard() {
-    val context = LocalContext.current
     Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.Center) {
         Card(
             backgroundColor = Color(236, 234, 235),
@@ -74,7 +72,6 @@ fun SimpleDesignCard() {
                 .padding(16.dp)
                 .size(400.dp, 350.dp)
                 .neumorphic(
-                    context,
                     neuShape = Pot.Rounded(6.dp),
                     strokeWidth = 7.dp,
 //                    neuInsets = NeuInsets(8.dp, 8.dp)
@@ -87,7 +84,6 @@ fun SimpleDesignCard() {
             ) {
 
                 SimpleOvalCard(
-                    context = context,
                     resource = R.drawable.ic_baseline_emoji_emotions_24,
                     size = 64.dp
                 )
@@ -96,7 +92,7 @@ fun SimpleDesignCard() {
                     modifier = Modifier
                         .size(300.dp, 150.dp)
                         .clip(RoundedCornerShape(12.dp))
-                        .neumorphic(context, neuShape = Pressed.Rounded(12.dp))
+                        .neumorphic(neuShape = Pressed.Rounded(12.dp))
                         .padding(12.dp),
                     horizontalArrangement = Arrangement.Center,
                     verticalAlignment = Alignment.CenterVertically
@@ -115,14 +111,14 @@ fun SimpleDesignCard() {
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     PunchedButton(
-                        context = context,
+
                         btnShape = CircleShape,
                         text = "Always",
                         neuInsets = NeuInsets(6.dp),
                         neuShape = Punched.Oval()
                     )
                     PunchedButton(
-                        context = context,
+
                         btnShape = CircleShape,
                         text = "Never",
                         neuInsets = NeuInsets(6.dp),
@@ -137,14 +133,13 @@ fun SimpleDesignCard() {
 
 @Composable
 fun PressedRow() {
-    val context = LocalContext.current
     Row(
         modifier = Modifier
             .padding(18.dp)
             .size(400.dp, 100.dp)
             .background(Color(236, 234, 235))
             .clip(RoundedCornerShape(12.dp))
-            .neumorphic(context, neuShape = Pressed.Rounded(12.dp)),
+            .neumorphic(neuShape = Pressed.Rounded(12.dp)),
         horizontalArrangement = Arrangement.Center,
         verticalAlignment = Alignment.CenterVertically
     ) {
@@ -164,7 +159,6 @@ fun PressedRow() {
 
 @Composable
 fun PotCard() {
-    val context = LocalContext.current
     Row(
         modifier = Modifier.fillMaxWidth(),
         horizontalArrangement = Arrangement.Center,
@@ -178,7 +172,6 @@ fun PotCard() {
                 .padding(16.dp)
                 .size(300.dp, 100.dp)
                 .neumorphic(
-                    context,
                     neuShape = Pot.Rounded(12.dp),
                     elevation = 12.dp,
                     strokeWidth = 8.dp,
@@ -206,7 +199,6 @@ fun PotCard() {
 
 @Composable
 fun PunchedButtons() {
-    val context = LocalContext.current
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -216,7 +208,6 @@ fun PunchedButtons() {
     ) {
         for (i in 1..2) {
             PunchedButton(
-                context = context,
                 btnShape = RoundedCornerShape(6.dp),
                 text = "Button $i",
                 neuShape = Punched.Rounded(6.dp),
@@ -228,7 +219,6 @@ fun PunchedButtons() {
 
 @Composable
 fun PunchedCards() {
-    val context = LocalContext.current
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -244,14 +234,14 @@ fun PunchedCards() {
         )
 
         for (i in 0..2) {
-            SimpleOvalCard(context = context, resource = resourceArray[i])
+            SimpleOvalCard(resource = resourceArray[i])
         }
     }
 }
 
 @Composable
 fun PunchedButton(
-    context: Context, btnShape: Shape, text: String, neuShape: NeuShape,
+    btnShape: Shape, text: String, neuShape: NeuShape,
     neuInsets: NeuInsets = NeuInsets(4.dp, 4.dp)
 ) {
     Button(
@@ -263,7 +253,6 @@ fun PunchedButton(
         modifier = Modifier
             .padding(12.dp)
             .neumorphic(
-                context,
                 neuShape = neuShape,
                 neuInsets = neuInsets
             )
@@ -274,7 +263,7 @@ fun PunchedButton(
 
 
 @Composable
-fun SimpleOvalCard(context: Context, resource: Int, size: Dp = 32.dp) {
+fun SimpleOvalCard(resource: Int, size: Dp = 32.dp) {
     Card(
         backgroundColor = Color(236, 234, 235),
         elevation = 0.dp,
@@ -282,7 +271,7 @@ fun SimpleOvalCard(context: Context, resource: Int, size: Dp = 32.dp) {
         shape = CircleShape, modifier = Modifier
             .size(100.dp)
             .padding(16.dp)
-            .neumorphic(context, neuShape = Punched.Oval())
+            .neumorphic(neuShape = Punched.Oval())
     ) {
         Row(
             modifier = Modifier.fillMaxSize(),
@@ -300,7 +289,7 @@ fun SimpleOvalCard(context: Context, resource: Int, size: Dp = 32.dp) {
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
-    NeumorphismComposeTheme{
+    NeumorphismComposeTheme {
         Greeting("Android")
     }
 }
