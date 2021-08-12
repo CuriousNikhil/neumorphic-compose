@@ -39,20 +39,20 @@ android {
     }
     composeOptions {
         kotlinCompilerExtensionVersion compose_version
-        kotlinCompilerVersion '1.4.32'
+        kotlinCompilerVersion kotlin_version
     }
 }
 
 dependencies {
 
-    implementation 'androidx.core:core-ktx:1.5.0'
-    implementation 'androidx.appcompat:appcompat:1.3.0'
-    implementation 'com.google.android.material:material:1.3.0'
+    implementation 'androidx.core:core-ktx:1.6.0'
+    implementation 'androidx.appcompat:appcompat:1.3.1'
+    implementation 'com.google.android.material:material:1.4.0'
     implementation "androidx.compose.ui:ui:$compose_version"
     implementation "androidx.compose.material:material:$compose_version"
     implementation "androidx.compose.ui:ui-tooling:$compose_version"
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.1'
-    implementation 'androidx.activity:activity-compose:1.3.0-alpha08'
+    implementation 'androidx.activity:activity-compose:1.3.1'
     implementation project(path: ':library')
 //    implementation "me.nikhilchaudhari:composeNeumorphism:1.0.0-alpha"
     testImplementation 'junit:junit:4.+'
