@@ -15,12 +15,12 @@ This library is an experimentation with [Neumorphism UI](https://uxdesign.cc/neu
 And your app level `build.gradle`. (Make sure you have compose dependencies as well)
 
 ```kotlin
-  implementation("me.nikhilchaudhari:composeNeumorphism:1.0.0-alpha")
+  implementation("me.nikhilchaudhari:composeNeumorphism:1.0.0-alpha02")
 ```
 
 ### 2. Use
 
-Just add `modifier = Modifier.neumorphic(context)` to any of your UI element of Jetpack-Compose (just like you do for other modifiers).
+Just add `modifier = Modifier.neumorphic()` to any of your UI element of Jetpack-Compose (just like you do for other modifiers).
 
 ![image](https://user-images.githubusercontent.com/16976114/120097042-12adfe00-c14c-11eb-861c-a826108194d6.png)
 
@@ -45,7 +45,6 @@ Card(
       .padding(16.dp)
       .size(300.dp, 100.dp)
       .neumorphic(
-        context,
         neuShape = 
           // Punched shape
          Punched.Rounded(radius = 8.dp) 
@@ -89,7 +88,6 @@ Params              | Description
         modifier = Modifier
             .padding(12.dp)
             .neumorphic(
-                context,
                 // assing neuShape
                 //...
                 lightShadowColor = Color.White,
@@ -113,7 +111,7 @@ The overall configutation
 
 ## FAQs
 ### What's the idea? Is there any performance overhead?
-Idea is simple - just draw the two shadows light and dark around the UI element. I'm using [RenderScript](https://developer.android.com/guide/topics/renderscript/compute) to blur two GradientDrawables (that's why the `context` parameter). I know it's going to be deprecated in the Android 12. I'll surely update the code to migrate from RenderScript. If Renderscript throws any exception / not able to blur the drawable, I'm using [StackBlur](https://github.com/CuriousNikhil/neumorphic-compose/blob/main/library/src/main/java/me/nikhilchaudhari/library/internal/StackBlur.kt) algorithm from Mario Klingemann as a workaround.
+Idea is simple - just draw the two shadows light and dark around the UI element. I'm using [RenderScript](https://developer.android.com/guide/topics/renderscript/compute) to blur two GradientDrawables. I know it's going to be deprecated in the Android 12. I'll surely update the code to migrate from RenderScript. If Renderscript throws any exception / not able to blur the drawable, I'm using [StackBlur](https://github.com/CuriousNikhil/neumorphic-compose/blob/main/library/src/main/java/me/nikhilchaudhari/library/internal/StackBlur.kt) algorithm from Mario Klingemann as a workaround.
 
 ### Does this library work with all the Jetpack Compose UI elements? 
 I can't surely say. I'm already experimenting drawing shadow on UIs with Jetpack Compose and improving this library. I request you to try and please help to make it work.
