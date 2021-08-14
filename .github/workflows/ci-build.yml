@@ -4,7 +4,7 @@ name: Java/Kotlin CI with Gradle
 
 on:
   push:
-    branches: [ main ]
+    branches: [ $BRANCH_NAME ]
   pull_request:
     branches: [ main ]
 
